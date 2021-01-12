@@ -13,3 +13,4 @@ No | Source | Fixina  | Drawbacks
 1) spaudžiant ant boto minimap characteris nejuda.
 2) naudojant Engine.MoveTo(x,y,z) characteris nejuda.
 3) l2Mordor banas parėjo po 5 min
+4) neveikia l2Neo
