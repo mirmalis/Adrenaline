@@ -1,0 +1,16 @@
+.vscode
+desktop.ini
+key.txt
+Maps/*.jpg
+!Maps/RadarMap.jpg
+ibeecutin/
+Tools/PathFinder new/Maps/*
+Tools/PathFinter old/Maps/*
+Code/todo/*
+Settings/*.zhs
+Settings/global.gmap
+Maps/psd/24_15.psd
+Maps/psd/25_17.psd
+Sounds/_.txt
+Sounds/_todo.txt
+
