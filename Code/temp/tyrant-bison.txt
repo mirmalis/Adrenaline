@@ -1,0 +1,38 @@
+var
+  vron: Boolean;
+function EquipItem(itemOID: cardinal; newState: boolean = true): Boolean;
+var item: TL2Item;
+begin
+  Inventory.user.ByOID(itemOID, item);
+  if(item.Equipped <> newState) then
+  begin
+    Engine.useItem(item);
+Result := true;
+  end else
+  begin
+  Result := false;
+  end;
+end;
+function vr(state: Boolean): Boolean;
+  begin
+    if(state)
+    then begin
+      Result := EquipItem(272195127);
+    end
+    else begin
+      Result := EquipItem(275152187);
+    end;
+  end;
+
+begin
+  vr(false);
+  while true do begin
+    if(user.HP > 28) then begin
+      if vr(false) then begin end;
+    end else if (user.HP < 20) then
+    begin
+      if vr(true) then begin end;
+    end;
+    Delay(500);
+  end;
+end.

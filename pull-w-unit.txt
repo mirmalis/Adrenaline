@@ -1,0 +1,29 @@
+uses
+sdpGPS, sdpBYPASS, sdpUtils, sdpItem
+, sdpPuller
+, sdpCounter
+;
+var
+  arr : Array of TPullSpot;
+  x,y,z: Integer;
+  var i, c: Integer;
+
+begin
+  Engine.LoadZone('cc apostate rl');
+  x := User.X; y := User.Y; z := User.Z;
+  arr := arr_cc_apostate_rl;
+  while true do begin
+    for i := 0 to Length(arr) - 1 do begin
+      repeat
+        while user.MP < 30 do Delay(1000);
+        c := CountMobsInZone;
+        Delay(1000);
+      until c < 3;
+      if arr[i].TryPullBackXYZ(x, y, z, 'Wind Strike')
+      then Delay(15000);
+    end;
+    Delay(100);
+  end;
+
+end.
+

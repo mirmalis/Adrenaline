@@ -1,0 +1,77 @@
+uses sdpCounter, sdpMATH;
+function Pull(cx,cy,cz: Integer; skill: string; skillRange: Integer; x,y,z: Integer): Boolean;
+  begin
+    Result := false;
+    if CountMobArround(cx,cy,cz, skillRange) > 0  then begin
+      Engine.FaceControl(0, false);
+      Engine.MoveTo(x,y,z); // small room
+      if TargetFurthestInCircle(cx,cy,cz, skillRange)
+      then begin
+        Result := true;
+        if User.DistTo(User.Target) > 400
+        then Engine.MoveToTarget(-400);
+        Engine.UseSkill(skill);
+      end;
+      BackToLeader;
+//    Engine.MoveTo(x,y,z); // center @ big
+      Engine.FaceControl(0, true);
+    end else Print('no mobs to pull');
+  end;
+procedure BackToLeader();
+  begin
+    if (User.DistTo(Party.Leader) > 300) then begin
+      while User.DistTo(Party.Leader) > 300 do
+      begin
+        Engine.DMoveTo(Party.Leader.X, Party.Leader.Y, Party.Leader.Z);
+        Delay(300);
+      end;
+      Engine.DMoveTo(Party.Leader.X, Party.Leader.Y, Party.Leader.Z);
+    end;
+    
+  end;
+function TargetFurthestInCircle(x,y,z: Integer; vRadius: Integer): Boolean;
+  var
+    i: Integer;
+    ind: Integer;
+  
+  begin
+    Result := false;
+    for  i := 0 to NpcList.Count - 1 do begin
+      if (NpcList.Items(i).DistTo(x,y,z) > vRadius)
+      then begin
+        if i > 0
+        then begin
+          Engine.SetTarget(NpcList.Items(i-1));
+          Result := true;
+        end;
+        break;
+      end;
+    end;
+  end;
+var c: Integer;
+begin
+  while true do begin
+
+    repeat
+      c := countMobsInZone;
+      Delay(1000);
+    until c <= 1;
+    while countMobTargetors(User) > 0 do begin
+      Delay(100);
+      Print('Tankinu');
+      Print(countMobTargetors(User));
+    end;
+
+    
+//    while not User.Target.Dead do delay(100);
+
+    if (User.Name = 'lllse')
+    then Pull(50856, 170296, -4976, 'Wind Strike', 600, 49560, 170296, -4976);
+    if (User.Name = 'lsws')
+    then if Pull(51096, 170312, -4976, 'Aggression', 600, 50856, 170296, -4976)
+    then Print('pull success');
+    Delay(30000);
+  end;
+  
+
+end.

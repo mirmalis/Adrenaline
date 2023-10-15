@@ -1,0 +1,18 @@
+uses sdpSLAVE, sdpRaidUnit, raidDancerUnit, sdpSL;
+function OnEntry(var x:Integer): Boolean;
+  begin
+    HandleEntry(x);
+  end;
+function DoCustom(x: Integer): Boolean;
+  begin
+    Result := true;
+    if x = 0 then Print('yes Masa')
+    else if x = startCommand then DanceSong(SL('276'), SL('268'), 0)
+    else if x = dsCommand then DanceSong(SL('271;274;275'), SL('269;264'), 1007)
+    else Result := DoRaid(x);
+  end;
+
+begin
+  //DanceSong(SL('275;274;271'), SL('264;269'), '');
+  Delay(-1);
+end.

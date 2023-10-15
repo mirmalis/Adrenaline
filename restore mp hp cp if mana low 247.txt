@@ -1,0 +1,8 @@
+uses sdpBYPASS;
+begin
+
+while true do begin
+  while user.MP > 5 do delay(500);
+  B('CP HP MP');
+end;
+end.

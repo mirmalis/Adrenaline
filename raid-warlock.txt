@@ -1,0 +1,19 @@
+uses sdpSLAVE, sdpRaidUnit;
+function OnEntry(var x:Integer): Boolean;
+  begin
+    HandleEntry(x);
+  end;
+function DoCustom(x: Integer): Boolean;
+  begin
+    Result := true;
+    if x = 0 then Print('yes Masa')
+    else if x = standCommand then begin
+      Engine.Stand;
+      Engine.UseSkill('Summon Feline Queen', false, false);
+    end
+    else Result := DoRaid(x);
+  end;
+
+begin
+  Delay(-1);
+end.

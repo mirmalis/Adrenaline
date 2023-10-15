@@ -1,0 +1,70 @@
+
+uses sdpGPS, sdpBYPASS, sdpUtils, sdpItem;
+const
+  shackles: Integer =   1368;
+  shots: Integer =   5789;
+procedure Start();
+  begin
+    Engine.LoadConfig('!dd');
+    Engine.FaceControl(0, true);
+  end;
+procedure Finish();
+  begin
+    Engine.LoadConfig('dd-fightoff');
+    while (User.Target = nil) and Delay(250)
+      and (User.Target = nil) and Delay(250)
+      and (User.Target = nil) and Delay(250)
+      and (User.Target = nil) and Delay(250)
+    do Print('finishing');
+  end;
+begin
+//GPS_MoveTo(12168, 16696, -4584); Engine.BlinkWindow(true); end.
+  if(User.DistTo(28377, 10916, -4224) < 2000)
+  and (sdpItem.ItemCount(5789)=0)
+  then begin
+    TalkTo('Newbie Helper');
+    Delay(1000);
+    TalkTo('Mitraell', '');
+    Start;
+    while sdpItem.ItemCOunt( 6353) = 0 do Delay(1000);
+    Finish;
+    TalkTo('Newbie Helper');
+    TalkTo('Mitraell', '1');
+  end;
+  Engine.AutoSoulShot(5789, true);
+  if(User.Level < 6)
+  then begin
+    GPS_MoveTo(23032, 9544, -3584); // delf prie juros
+//    GPS_MoveTo('hnt:delf prie juros');
+    Start;
+    while User.Level < 6 do Delay(1000);
+    Finish;
+  end;
+  if (User.Level >= 6) and (User.Level < 8)
+  then begin
+    GPS_MoveTo(12168, 16712, -4584);
+    TalkTo('Newbie Helper', '');
+  end;
+  if(Engine.QuestStatus(265) = 0) and (ItemCount(shots) < 3000) then
+  begin
+    GPS_MoveTo('npc:kristin');
+    TalkTo('Kristin', 'Quest;1');  // Take quest
+  end;
+  if (User.Level < 8) or 
+    ((Engine.QuestStatus(265) > 0) and (sdpItem.ItemCount(shackles) = 0))
+  then
+  begin
+    GPS_MoveTo('hnt:delf imp prie miesto');
+    Start;
+    while (User.Level < 8)
+      and ((Engine.QuestStatus(265) = 0) or (sdpItem.ItemCount(shackles) = 0))
+    do delay(1000);
+    Finish;
+  end;
+
+  GPS_MoveTo('npc:kristin');
+  TalkTo('Kristin', 'Quest;Quit');
+  GPS_MoveTo('npc:delf newbie guide');
+  Engine.BLinkWindow(true);
+
+end.

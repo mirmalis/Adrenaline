@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<zone>
+	<ExternalPoly>
+		<points>
+			<point x="96468" y="185860"/>
+			<point x="95427" y="188356"/>
+			<point x="94900" y="192459"/>
+			<point x="91736" y="196624"/>
+			<point x="76813" y="196599"/>
+			<point x="77682" y="180732"/>
+			<point x="93007" y="179181"/>
+		</points>
+	</ExternalPoly>
+	<InternalPolies>
+		<poly>
+			<points>
+				<point x="93255" y="189283"/>
+				<point x="93044" y="189290"/>
+				<point x="93036" y="189601"/>
+				<point x="93222" y="189692"/>
+				<point x="93428" y="189451"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="93558" y="189582"/>
+				<point x="93262" y="189843"/>
+				<point x="93345" y="190064"/>
+				<point x="93026" y="190087"/>
+				<point x="93003" y="190287"/>
+				<point x="93535" y="190252"/>
+				<point x="93636" y="190174"/>
+				<point x="93735" y="189638"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="90461" y="186444"/>
+				<point x="90783" y="186436"/>
+				<point x="90930" y="186565"/>
+				<point x="91068" y="186634"/>
+				<point x="91021" y="186806"/>
+				<point x="90852" y="186755"/>
+				<point x="90550" y="186712"/>
+				<point x="90382" y="186638"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="92824" y="186359"/>
+				<point x="92849" y="186666"/>
+				<point x="93030" y="186588"/>
+				<point x="92978" y="186364"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="84641" y="184175"/>
+				<point x="84704" y="184322"/>
+				<point x="84843" y="184472"/>
+				<point x="84807" y="184603"/>
+				<point x="84605" y="184606"/>
+				<point x="84391" y="184512"/>
+				<point x="84324" y="184270"/>
+				<point x="84471" y="184128"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="84833" y="183360"/>
+				<point x="84733" y="183495"/>
+				<point x="84726" y="184013"/>
+				<point x="85018" y="183985"/>
+				<point x="85146" y="183772"/>
+				<point x="85082" y="183488"/>
+			</points>
+		</poly>
+	</InternalPolies>
+</zone>

@@ -1,0 +1,33 @@
+uses SysUtils, PacketHelper;
+
+//62=SystemMessage:d(MsgID:Get.MsgID)d(typesCount:Loop.01.0002)d(0=Str,1=Int,2=NpcID,3=ItmID,4=SklID,6=Amnt)s(data)
+
+procedure OnPacket(ID, ID2: Cardinal; Data: Pointer; Size: Word);
+var
+  charName : String;
+  character: TL2Live;
+  i, j, amnt: cardinal;
+  packet: TL2Packet;
+begin
+  case intToHex(id, 2) of
+    '62' :
+    begin
+      packet.fetchFromMemory(script.path + 'PacketsHighFive.ini', id, id2, data, size);
+
+      //получаем id сообщения
+      if packet.valueWithName('MsgID:Get.MsgID').integerValue = 28 then
+      begin
+        //тип 6 - amnt, скорее всего 4 байта без знака
+        //
+        amnt:= pcardinal(pchar(packet.valueWithName('data').listValue[0].stringValue))^;
+        print(amnt);
+      end;
+      
+    end;
+  end;
+  
+end;
+
+begin
+  delay(-1);
+end.

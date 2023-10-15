@@ -1,19 +1,4 @@
 [ITEMS]
-8600=Herb-HP
-8601=Herb-HP Greater
-8602=Herb-HP Superior
-8603=Herb-MP
-8604=Herb-MP Greater
-8606=Herb-buff Might
-8607=Herb-buff Empower
-8608=Herb-buff Haste
-8609=Herb-buff Acumen
-8610=Herb-buff Focus
-8611=Herb-buff Wind Walk
-8612=Herb-buff Warrior
-8613=Herb-buff Mystic
-8614=Herb-Recovery
-8605=Herb-MP Superior
 [NPCS]
 22824=Drakos Guardian|1
 21414=Assasin of Empire l2neo|1

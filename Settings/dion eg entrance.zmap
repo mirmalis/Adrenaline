@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<zone>
+	<ExternalPoly>
+		<points>
+			<point x="41853" y="151550"/>
+			<point x="42067" y="149549"/>
+			<point x="42264" y="145384"/>
+			<point x="44093" y="145240"/>
+			<point x="44299" y="145652"/>
+			<point x="44684" y="145515"/>
+			<point x="44452" y="145098"/>
+			<point x="45140" y="144619"/>
+			<point x="45734" y="146045"/>
+			<point x="48772" y="147893"/>
+			<point x="49016" y="149686"/>
+			<point x="48239" y="150130"/>
+			<point x="47187" y="150004"/>
+			<point x="46519" y="150343"/>
+			<point x="46358" y="150022"/>
+			<point x="46077" y="150225"/>
+			<point x="46294" y="150512"/>
+			<point x="44890" y="151602"/>
+			<point x="43311" y="151943"/>
+		</points>
+	</ExternalPoly>
+	<InternalPolies>
+		<poly>
+			<points>
+				<point x="44351" y="145876"/>
+				<point x="44550" y="146444"/>
+				<point x="45042" y="146326"/>
+				<point x="44692" y="145822"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="45660" y="148942"/>
+				<point x="46227" y="149811"/>
+				<point x="45972" y="150036"/>
+				<point x="45333" y="149141"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="45382" y="150090"/>
+				<point x="45283" y="150201"/>
+				<point x="45405" y="150280"/>
+				<point x="45465" y="150174"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="43507" y="150197"/>
+				<point x="43515" y="150395"/>
+				<point x="43723" y="150395"/>
+				<point x="43749" y="150240"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="46021" y="148846"/>
+				<point x="46042" y="148951"/>
+				<point x="46178" y="148962"/>
+				<point x="46273" y="148794"/>
+				<point x="46105" y="148710"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="43153" y="146607"/>
+				<point x="43370" y="146575"/>
+				<point x="43477" y="146687"/>
+				<point x="43400" y="146876"/>
+				<point x="43277" y="146897"/>
+				<point x="43140" y="146819"/>
+			</points>
+		</poly>
+	</InternalPolies>
+</zone>

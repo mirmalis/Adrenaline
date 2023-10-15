@@ -1,0 +1,42 @@
+uses sdpGPS, sdpBYPASS, sdpITEM;
+function Lv3: Boolean;
+  begin
+    if(User.Level < 3) then
+    begin
+      Engine.LoadCOnfig('!dd');
+      Engine.FaceControl(0, true);
+      while not User.Dead and (User.Level < 3) do begin
+        Delay(100);
+      end;
+      Engine.FaceControl(0, false);
+    end;
+    Result := User.Level >= 3;
+  end;
+function DoQuest: Boolean;
+  begin
+    if(ItemCount(7126) = 0) then
+    begin
+      GPS_MoveTo('delf gk');
+      TalkTo('Teleport Device', 'Quest;1');
+      GPS_MoveTo(15224, 16280, -4376);
+      TalkTo('Roselyn', 'Quest;1');
+      GPS_MoveTo('npc:Harne');
+      TalkTo('Harne', 'Quest;1');
+      GPS_MoveTo('delf gk');
+      TalkTo('Teleport Device', 'Quest;1');
+    end;
+    Result := ItemCount(7126) > 0;
+  end;
+var
+  i: Integer;
+  
+begin
+  for i := 0 to 6 do begin
+    Engine.GameStart(i); Delay(4000);
+    Lv3;
+    DoQuest;
+    GPS_MoveTo('delf newbie');
+    Engine.Restart;
+  end;
+  Engine.BlinkWindow(true);
+end.

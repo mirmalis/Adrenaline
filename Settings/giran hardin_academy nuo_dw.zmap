@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<zone>
+	<ExternalPoly>
+		<points>
+			<point x="68236" y="97210"/>
+			<point x="68017" y="98280"/>
+			<point x="68821" y="98861"/>
+			<point x="68298" y="99665"/>
+			<point x="68645" y="101071"/>
+			<point x="69415" y="102240"/>
+			<point x="70185" y="103347"/>
+			<point x="72255" y="103010"/>
+			<point x="72929" y="100941"/>
+			<point x="73290" y="99208"/>
+			<point x="75889" y="99208"/>
+			<point x="75576" y="97740"/>
+			<point x="72448" y="96561"/>
+			<point x="69487" y="96416"/>
+		</points>
+	</ExternalPoly>
+	<InternalPolies>
+		<poly>
+			<points>
+				<point x="70486" y="100239"/>
+				<point x="70172" y="100343"/>
+				<point x="70172" y="100515"/>
+				<point x="70516" y="100649"/>
+				<point x="70822" y="100403"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="69575" y="98851"/>
+				<point x="69695" y="99090"/>
+				<point x="69963" y="99209"/>
+				<point x="70038" y="99045"/>
+				<point x="69725" y="98761"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="70590" y="98844"/>
+				<point x="70941" y="99276"/>
+				<point x="71053" y="99157"/>
+				<point x="70814" y="98769"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="71292" y="100936"/>
+				<point x="71548" y="101483"/>
+				<point x="71718" y="101256"/>
+				<point x="71448" y="100829"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="71498" y="100574"/>
+				<point x="71562" y="100815"/>
+				<point x="71683" y="100787"/>
+				<point x="71775" y="100623"/>
+				<point x="71654" y="100460"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="70787" y="97567"/>
+				<point x="70567" y="97738"/>
+				<point x="70645" y="97958"/>
+				<point x="70780" y="98051"/>
+				<point x="71008" y="97873"/>
+				<point x="71008" y="97717"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="71953" y="97539"/>
+				<point x="71718" y="97681"/>
+				<point x="71775" y="97859"/>
+				<point x="71917" y="97880"/>
+				<point x="72081" y="97667"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="69654" y="101495"/>
+				<point x="69675" y="101758"/>
+				<point x="69874" y="101831"/>
+				<point x="69948" y="101621"/>
+				<point x="70042" y="101380"/>
+			</points>
+		</poly>
+	</InternalPolies>
+</zone>

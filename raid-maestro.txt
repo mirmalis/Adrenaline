@@ -1,0 +1,4 @@
+uses sdpRaidUnit;
+begin
+  ControlRaid();
+end.

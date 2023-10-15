@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<zone>
+	<ExternalPoly>
+		<points>
+			<point x="-62179" y="179159"/>
+			<point x="-60665" y="179144"/>
+			<point x="-60636" y="180125"/>
+			<point x="-61773" y="180125"/>
+			<point x="-61790" y="180710"/>
+			<point x="-61654" y="180862"/>
+			<point x="-60681" y="180850"/>
+			<point x="-60646" y="181034"/>
+			<point x="-60306" y="181030"/>
+			<point x="-60318" y="180814"/>
+			<point x="-58702" y="180821"/>
+			<point x="-58681" y="181851"/>
+			<point x="-60278" y="181844"/>
+			<point x="-60314" y="181658"/>
+			<point x="-60626" y="181678"/>
+			<point x="-60704" y="181836"/>
+			<point x="-62226" y="181849"/>
+			<point x="-62194" y="180873"/>
+			<point x="-61908" y="180879"/>
+			<point x="-61929" y="180112"/>
+			<point x="-62202" y="180133"/>
+		</points>
+	</ExternalPoly>
+	<InternalPolies>
+		<poly>
+			<points>
+				<point x="-61254" y="179703"/>
+				<point x="-61262" y="179873"/>
+				<point x="-61128" y="179869"/>
+				<point x="-61144" y="179727"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="-60839" y="179715"/>
+				<point x="-60831" y="179849"/>
+				<point x="-60728" y="179857"/>
+				<point x="-60724" y="179731"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="-60835" y="179426"/>
+				<point x="-60835" y="179561"/>
+				<point x="-60732" y="179553"/>
+				<point x="-60712" y="179450"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="-61242" y="179442"/>
+				<point x="-61258" y="179549"/>
+				<point x="-61140" y="179561"/>
+				<point x="-61140" y="179454"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="-61714" y="179434"/>
+				<point x="-61718" y="179574"/>
+				<point x="-61598" y="179582"/>
+				<point x="-61618" y="179438"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="-61702" y="179723"/>
+				<point x="-61698" y="179834"/>
+				<point x="-61579" y="179838"/>
+				<point x="-61575" y="179747"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="-62002" y="179726"/>
+				<point x="-62006" y="179882"/>
+				<point x="-62118" y="179882"/>
+				<point x="-62114" y="179726"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="-62110" y="179430"/>
+				<point x="-62106" y="179578"/>
+				<point x="-61994" y="179578"/>
+				<point x="-61994" y="179438"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="-61734" y="181110"/>
+				<point x="-61734" y="181242"/>
+				<point x="-61658" y="181254"/>
+				<point x="-61630" y="181106"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="-61746" y="181454"/>
+				<point x="-61734" y="181582"/>
+				<point x="-61650" y="181570"/>
+				<point x="-61650" y="181446"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="-61206" y="181450"/>
+				<point x="-61210" y="181586"/>
+				<point x="-61118" y="181574"/>
+				<point x="-61114" y="181434"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="-61206" y="181110"/>
+				<point x="-61218" y="181250"/>
+				<point x="-61130" y="181254"/>
+				<point x="-61114" y="181102"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="-60179" y="181417"/>
+				<point x="-60179" y="181531"/>
+				<point x="-60045" y="181527"/>
+				<point x="-60069" y="181421"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="-59806" y="181434"/>
+				<point x="-59806" y="181554"/>
+				<point x="-59702" y="181582"/>
+				<point x="-59698" y="181422"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="-59350" y="181434"/>
+				<point x="-59354" y="181554"/>
+				<point x="-59250" y="181558"/>
+				<point x="-59238" y="181426"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="-60182" y="181138"/>
+				<point x="-60202" y="181270"/>
+				<point x="-60082" y="181262"/>
+				<point x="-60082" y="181134"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="-59802" y="181130"/>
+				<point x="-59794" y="181270"/>
+				<point x="-59674" y="181266"/>
+				<point x="-59657" y="181133"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="-59354" y="181114"/>
+				<point x="-59338" y="181274"/>
+				<point x="-59234" y="181278"/>
+				<point x="-59230" y="181126"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="-58933" y="181121"/>
+				<point x="-58929" y="181260"/>
+				<point x="-58814" y="181244"/>
+				<point x="-58802" y="181137"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="-58921" y="181406"/>
+				<point x="-58921" y="181517"/>
+				<point x="-58806" y="181525"/>
+				<point x="-58794" y="181426"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="-60654" y="181586"/>
+				<point x="-60278" y="181578"/>
+				<point x="-60294" y="181118"/>
+				<point x="-60650" y="181106"/>
+			</points>
+		</poly>
+	</InternalPolies>
+</zone>

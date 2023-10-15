@@ -1,0 +1,34 @@
+uses sdpGPS, sdpBYPASS, sdpUtils, sdpItem;
+const
+  questId_destroyPlagueCarriers: Integer = 316;
+function waitQuestStatusChange(questId: Integer; questStatus: Integer): Boolean;
+  begin
+    while Engine.QuestStatus(questId) = questStatus do Delay(100);
+    Result := true;
+  end;
+begin
+Engine.LoadConfig('dd-fightoff');
+Engine.FaceControl(1, false);
+
+//GPS_MoveTo(45528, 48488, -3056); TalkTo('Newbie Helper', 'magic');
+//GPS_MoveTo(45704, 52136, -2792); TalkTo('Ellenia', 'Quest');
+GPS_MoveTo(46920, 51544, -2976); Engine.UseSkill('Attack Aura'); Delay(1000); TalkTo('Mirabel', 'Teleport;Fortress');Delay(3000);
+
+Engine.MoveTo(28733, 74954, -3736); GPS_MoveTo('mob:varool foulclaw');
+if Engine.Restart
+then begin Delay(10000); Engine.GameStart; Delay(3000); end
+else begin Engine.LoadConfig('dd-fightoff'); Engine.FaceControl(0, true); Delay(20000); end;
+
+Engine.LoadConfig('lsws');
+Engine.FaceControl(0, true);
+while sdpItem.ItemCount(1043) = 0 do Delay(1000);
+Engine.MoveTo(14232, 79960, -4088); // prie sienos
+Engine.LoadConfig('dd-fightoff'); Engine.FaceControl(0, true);
+
+Engine.BlinkWindow(true);
+
+//GPS_MoveTo('gludio gludin'); Engine.unstuck; Delay(60000); Engine.BlinkWindow(true);
+  //GPS_MoveToClosest('safe1;safe2;safe3;safe4;safe5;safe6;safe7;safe8;safe9');
+//  cmd(path);
+//  Engine.Blinkwindow(true);
+end.

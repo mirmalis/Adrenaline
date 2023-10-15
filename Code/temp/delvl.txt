@@ -1,0 +1,12 @@
+begin
+while user.Level > 61 do
+  begin
+    while not user.dead do delay(60);
+  if (User.Dead) then Engine.GoHome;
+  Delay(500);
+  Delay(1500);
+
+  end;
+  Engine.FaceControl(0, false);
+  Engine.BlinkWindow;
+end.

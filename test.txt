@@ -1,0 +1,21 @@
+uses sdpGPS, sdpBYPASS, sdpUtils, sdpItem;
+begin
+Engine.FaceControl(0, false);
+GPS_MoveTo(-13960, 122008, -2992);
+
+TalkTo('Newbie Helper', 'Magic'); Delay(5000);
+GPS_MoveTo(-12744, 122776, -3120);
+
+TalkTo('Bella', 'Teleport;Windawood'); Delay(5000);
+GPS_MoveTo('hnt:gludio ant nest [windawood side] 2');
+
+Engine.FaceControl(0, true);
+Engine.LoadZone('gludio ant nest [windawood side] 2');
+// GPS_MoveTo('gludio gludin'); Engine.unstuck; Delay(60000); Engine.BlinkWindow(true);
+  //GPS_MoveToClosest('safe1;safe2;safe3;safe4;safe5;safe6;safe7;safe8;safe9');
+//  GPS_MoveTo('hnt:delf prie juros'); Engine.FaceControl(0, true);
+//  cmd(path);
+//  Engine.Blinkwindow(true);
+// CB('_bbsmultisell;index2;99999991');
+//Engine.ByPassToServer('_bbsmultisell;index2;99999991');
+end.

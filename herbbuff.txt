@@ -1,0 +1,36 @@
+uses sdpCounter;
+var
+  picking: Boolean;
+procedure OnAction(Action: TL2Action; P1, P2: pointer);
+begin
+  if (Action = laBuffs) then
+  if (User.Name = TL2Object(P1).Name) then
+  begin
+    if buffCount('Haste', 30000) = 0
+    then DoPick
+    else DontPick;
+  end;
+end;
+procedure DoPick();
+  begin
+    if not picking
+    then begin
+      Print('picking');
+      picking := true;
+      Engine.LoadConfig(User.Name + '-picking');
+    end;
+  end;
+procedure DontPick();
+  begin
+    if picking
+    then begin
+      Print('not picking');
+      picking := false;
+      Engine.LoadConfig(User.Name + '');
+    end;
+  end;
+begin
+  DoPick;
+  
+  Delay(-1);
+end.

@@ -1,0 +1,55 @@
+uses sdpGPS, sdpBYPASS, sdpUtils, sdpItem, sdpSTRINGS, sysUtils;
+procedure OnAction(Action: TL2Action; P1, P2: pointer);
+  begin
+    if Action = laCast then begin
+      Script.NewThread(
+          @OnSomeoneCasing, P1
+      );
+    end;
+  end;
+procedure OnSomeoneCasing(caster: TL2Char);
+  begin
+    if (caster.Name = 'lbd')
+   and (caster.Cast.Name = 'Dance of Fire')
+   then begin
+     Engine.FaceControl(1, false);
+     Engine.MoveTo(User.X+25, User.Y, User.Z);
+     Delay(333);
+     if User.ClassId = 21 then begin
+      
+       Engine.UseSkill('Song of Wind');
+//       Engine.UseSkill('Song of Warding');
+       Engine.UseSkill('Hunter''s Song');
+     end
+     else if User.ClassId = 34 then begin
+       Delay(User.Cast.EndTime);
+       Engine.UseSkill('Dance of Inspiration');
+     
+     end;
+     Engine.FaceControl(1, true);
+   end
+   else if
+    (caster.cast.name <> 'Soulshot (D-grade)')
+    and (caster.cast.name <> 'Blessed Spiritshot (No-grade)')
+    and (caster.cast.name <> 'Blessed Spiritshot (D-grade)')
+   then PrintAsCols('['+caster.name+']', caster.cast.name);
+  end;
+procedure PrintAsCols(a, b: string);
+  var
+    str: String;
+    i: Integer;
+  begin
+    str := a + '                          ' + b;
+    Print(str);
+  end;
+
+begin
+// GPS_MoveTo('gludio gludin'); Engine.unstuck; Delay(60000); Engine.BlinkWindow(true);
+  //GPS_MoveToClosest('safe1;safe2;safe3;safe4;safe5;safe6;safe7;safe8;safe9');
+//  GPS_MoveTo('hnt:delf prie juros'); Engine.FaceControl(0, true);
+//  cmd(path);
+//  Engine.Blinkwindow(true);
+// CB('_bbsmultisell;index2;99999991');
+//Engine.ByPassToServer('_bbsmultisell;index2;99999991');
+Delay(-1);
+end.

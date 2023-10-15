@@ -1,0 +1,8 @@
+uses sdpSharing;
+begin
+  SetScriptId(500);
+  if(not StateIsTaken(1, 1)) then
+  begin
+    SetState(1, 1);
+  end;
+end.

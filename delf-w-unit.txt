@@ -1,0 +1,8 @@
+uses SysUtils, x1DelfQuests;
+begin
+  EndTime := StrToDateTime(DateToStr(Date)+ ' 22:20:00');
+  if (User.Cast.EndTime > 0) then begin
+    Delay(User.Cast.EndTime + 10000);
+  end;
+  Main();
+end.

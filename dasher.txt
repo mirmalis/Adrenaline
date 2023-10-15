@@ -1,0 +1,12 @@
+uses sdpThreads, sdpConstants;
+var
+  dash: TBeDashing;
+  stealth: TBeDashing;
+begin
+  dash := TBeDashing.Create(4, 0);
+  stealth := TBeDashing.Create(411, 10*seconds);
+  dash.Start;
+  stealth.start;
+  Delay(-1);
+
+end.

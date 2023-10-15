@@ -1,0 +1,17 @@
+begin
+  while true do begin
+  while User.Target.Dead or (User.Target = nil) do Delay(100);
+  Print('Gloom');
+  Engine.UseSkill('Curse Gloom');
+  while not User.Target.Dead do begin
+    if User.HP > 80 then begin
+      Engine.UseSkill('Death Spike');
+      //Engine.UseKey('F5');
+    end else begin
+      Engine.useSkill('Vampiric Claw');
+    end;
+  end;
+  
+
+  end;
+end.

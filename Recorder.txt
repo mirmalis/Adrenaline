@@ -1,0 +1,48 @@
+uses RecorderUnit, sdpBYPASS, sdpSTRINGS;
+var
+  Action: TL2Action;
+  Tar   : TL2Live;
+  Obj   : TL2Live;
+  p     : pointer;
+procedure OnFree;
+begin
+  RecorderDestroy;
+  Print('Script finished');
+end;
+procedure OnAction(Action: TL2Action; P1, P2: pointer);
+begin
+end;
+procedure OnEnter;
+begin
+  Print('OnEnter');
+end;
+begin
+  Script.MainProc(@RecorderCreate);
+  repeat
+    Action := Engine.WaitAction([laDlg, laUnTarget, laStop], obj, p, 1000);
+    case Action of
+      laStop: begin
+        if (Obj = User) then
+        begin
+          RecFrm.ToLog('  Engine.MoveTo(' + ToStr(User.X) + ',' + ToStr(User.Y) + ',' + ToStr(User.Z) + ');');
+        end;
+      end;
+      laDlg: begin
+        if (User.Target.Valid) and (User.Target <> Tar) then
+        begin
+          Tar := User.Target;
+          RecFrm.ToLog('  Engine.SetTarget('''+ Tar.Name +''');');
+          RecFrm.ToLog('  Engine.DlgOpen;');
+          RecFrm.ToLog('  //npc use here');
+        end;
+      end;
+      laUntarget: begin
+        if (obj = User) and assigned(Tar) then
+        begin
+          Tar := nil;
+          RecFrm.ToLog('  Engine.CancelTarget;');
+        end;
+      end;
+    end;
+  until not RecFrm.Visible;
+end.
