@@ -1,4 +1,7 @@
 uses sdpGPS, sdpBYPASS, sdpUtils, sdpItem, sdpSTRINGS, sysUtils;
+const
+pplname: string = 'lllwlk';
+initiatorName: string = 'lbd';
 procedure OnAction(Action: TL2Action; P1, P2: pointer);
   begin
     if Action = laCast then begin
@@ -9,21 +12,34 @@ procedure OnAction(Action: TL2Action; P1, P2: pointer);
   end;
 procedure OnSomeoneCasing(caster: TL2Char);
   begin
-    if (caster.Name = 'lbd')
+    if (caster.Name = initiatorName)
    and (caster.Cast.Name = 'Dance of Fire')
    then begin
      Engine.FaceControl(1, false);
      Engine.MoveTo(User.X+25, User.Y, User.Z);
      Delay(333);
      if User.ClassId = 21 then begin
-      
+       if (User.MP > 90) then Delay(200);
        Engine.UseSkill('Song of Wind');
 //       Engine.UseSkill('Song of Warding');
        Engine.UseSkill('Hunter''s Song');
+       if (User.Level >= 55) then begin
+         if (pplname <> '') then
+         begin
+           Engine.LeaveParty;
+           Delay(105*1000);
+           GetControl(pplname).InviteParty(User.Name);
+         end;
+       end;
      end
      else if User.ClassId = 34 then begin
        Delay(User.Cast.EndTime);
-       Engine.UseSkill('Dance of Inspiration');
+//       Engine.UseSkill('Dance of Concentration');
+//       Engine.UseSkill('Dance of the Mystic');
+//       if (User.MP > 50) then
+//       Engine.UseSkill('Dance of Fire');
+       Engine.UseSkill('Dance of the Warrior');
+       
      
      end;
      Engine.FaceControl(1, true);
@@ -32,14 +48,17 @@ procedure OnSomeoneCasing(caster: TL2Char);
     (caster.cast.name <> 'Soulshot (D-grade)')
     and (caster.cast.name <> 'Blessed Spiritshot (No-grade)')
     and (caster.cast.name <> 'Blessed Spiritshot (D-grade)')
-   then PrintAsCols('['+caster.name+']', caster.cast.name);
+    and (caster.cast.name <> 'Blessed Spiritshot (C-grade)')
+    and (caster.cast.name <> 'Item - Beast Soul Shot')
+   then PrintAsCols('['+caster.name+']', caster.cast.name + '->' + caster.Target.Name);
   end;
 procedure PrintAsCols(a, b: string);
   var
     str: String;
     i: Integer;
   begin
-    str := a + '                          ' + b;
+    str := a + '                          ' +
+    b;
     Print(str);
   end;
 

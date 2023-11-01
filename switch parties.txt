@@ -1,0 +1,28 @@
+uses sdpSTRINGS;
+procedure GoParty(pplname: string; minutes: Integer);
+  var i: Integer;
+  begin
+    i := 0;
+    Engine.LeaveParty;
+    GetControl(pplname).InviteParty(User.Name);
+    Print('Joined ' + pplname + '''s party for '  + MinutesString(minutes) + '.');
+    repeat
+      Delay(60*1000);
+      i := i + 1;
+      if (minutes > i)
+      then Print('Leaving ' + pplname + '''s party in ' + MinutesString(minutes - i) + '.');
+    until i >= minutes;
+  end;
+function MinutesString(count: Integer): string;
+  begin
+    if (count = 1)
+    then Result := ToStr(count) + ' minute'
+    else Result := ToStr(count) + ' minutes';
+  end;
+begin
+  while true do begin
+    GoParty('lllsp', 1);
+    GoParty('lllwlk', 3);
+    GoParty('lllee', 10);
+  end;
+end.

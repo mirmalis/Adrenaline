@@ -20,10 +20,52 @@
 	<InternalPolies>
 		<poly>
 			<points>
-				<point x="93156" y="123078"/>
-				<point x="92888" y="123293"/>
-				<point x="93186" y="123350"/>
-				<point x="93441" y="123175"/>
+				<point x="93410" y="123432"/>
+				<point x="93290" y="123352"/>
+				<point x="93338" y="123236"/>
+				<point x="93470" y="123208"/>
+				<point x="93514" y="123264"/>
+				<point x="93526" y="123376"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="92952" y="123224"/>
+				<point x="92888" y="123128"/>
+				<point x="92776" y="123192"/>
+				<point x="92792" y="123288"/>
+				<point x="92904" y="123304"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="92936" y="123400"/>
+				<point x="92904" y="123480"/>
+				<point x="92760" y="123528"/>
+				<point x="92680" y="123512"/>
+				<point x="92645" y="123466"/>
+				<point x="92648" y="123364"/>
+				<point x="92696" y="123288"/>
+				<point x="92744" y="123272"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="92952" y="123080"/>
+				<point x="93000" y="123016"/>
+				<point x="93077" y="122984"/>
+				<point x="93144" y="123090"/>
+				<point x="93087" y="123195"/>
+				<point x="93000" y="123192"/>
+			</points>
+		</poly>
+		<poly>
+			<points>
+				<point x="93192" y="123128"/>
+				<point x="93272" y="123032"/>
+				<point x="93384" y="123096"/>
+				<point x="93384" y="123208"/>
+				<point x="93256" y="123240"/>
 			</points>
 		</poly>
 	</InternalPolies>
