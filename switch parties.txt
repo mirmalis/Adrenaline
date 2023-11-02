@@ -1,16 +1,16 @@
 uses sdpSTRINGS;
-procedure GoParty(pplname: string; minutes: Integer);
+procedure GoParty(pplname: string; minutes: Integer; Color: Integer = $FF0000);
   var i: Integer;
   begin
     i := 0;
     Engine.LeaveParty;
     GetControl(pplname).InviteParty(User.Name);
-    Print('Joined ' + pplname + '''s party for '  + MinutesString(minutes) + '.');
+    Engine.Msg('Party', 'Joined ' + pplname + '''s party for '  + MinutesString(minutes) + '.', Color);
     repeat
       Delay(60*1000);
       i := i + 1;
       if (minutes > i)
-      then Print('Leaving ' + pplname + '''s party in ' + MinutesString(minutes - i) + '.');
+      then Engine.Msg('Party', 'Leaving ' + pplname + '''s party in ' + MinutesString(minutes - i) + '.', Color);
     until i >= minutes;
   end;
 function MinutesString(count: Integer): string;
@@ -21,8 +21,8 @@ function MinutesString(count: Integer): string;
   end;
 begin
   while true do begin
-    GoParty('lllsp', 1);
-    GoParty('lllwlk', 3);
-    GoParty('lllee', 10);
+    GoParty('lllsp', 1, $228022);
+    GoParty('lllwlk', 5, $806022);
+    GoParty('lllee', 10, $222280);
   end;
 end.
