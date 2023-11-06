@@ -21,8 +21,7 @@ function MinutesString(count: Integer): string;
   end;
 begin
   while true do begin
-    GoParty('lllsp', 1, $228022);
-    GoParty('lllwlk', 5, $806022);
-    GoParty('lllee', 10, $222280);
+    GoParty('lllsp', 8, $222280);
+    GoParty('lllwlk', 1, $806022);
   end;
 end.

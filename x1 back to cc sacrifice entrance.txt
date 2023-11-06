@@ -1,0 +1,14 @@
+uses sdpGPS, sdpBYPASS;
+begin
+  Engine.FaceControl(0, false);
+  CB(3, 'Towns;Gludin;Broadcasting'); Delay(3000);
+  
+  TalkTo('Newbie Helper', 'Magic'); Delay(5000);
+  GPS_MoveTo(-80728, 149800, -3040);
+  TalkTo('Richlin', 'Teleport;Sacrifice'); Delay(3000);
+  GPS_MoveTo(-41552, 209329, -5080);
+  TalkTo('Gatekeeper Ziggurat', 'I wish to enter'); Delay(3000);
+  Engine.MoveTo(-41624, 211000, -5080);
+  
+  Engine.FaceControl(0, true);  
+end.
