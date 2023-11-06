@@ -1,5 +1,5 @@
 // TODO: text not inside of button itself. Typically in alt+b where text is in one element and button some form of textless element.
-// TODO: bypass a bypass where bypass message is dynamic. Ex: Creating scheme bypass changes based on new schemes image selected.
+  // TODO: bypass a bypass where bypass message is dynamic. Ex: Creating scheme bypass changes based on new schemes image selected.
 
 // TalkTo('Clarissa','teleport;antharas lair');
 // TalkTo('Clarissa=teleport;antharas lair'); // Could be useful for Quest scripts.
@@ -12,7 +12,8 @@ var
 function Dot(textAfterDot: String): Boolean;
 function EnterText(text: String): Boolean;
 function B(textToClick: String; textToNotClick: String = '$a^'): Boolean;
-function CB(textToClick: String; textToNotClick: String = '$a^'): Boolean;
+function CB(section: Integer; textToClick: String; textToNotClick: String = '$a^'): Boolean; Overload;
+function CB(textToClick: String; textToNotClick: String = '$a^'): Boolean; Overload;
 function Dlg(textToClick: String; textToNotClick: String = '$a^'): Boolean;
 function TalkTo(npcId: Integer; textToClick: String; textToNotClick: String = '$a^'): Boolean; Overload;
 function TalkTo(npcName: String; textToClick: String; textToNotClick: String = '$a^'): Boolean; Overload;
@@ -43,7 +44,33 @@ function B(textToClick: String; textToNotClick: String = '$a^'): Boolean;
       textToClick, textToNotClick
     );
   end;
-function CB(textToClick: String; textToNotClick: String = '$a^'): Boolean;
+function CB(section: Integer; textToClick: String; textToNotClick: String = '$a^'): Boolean; Overload;
+  var sectionBypass: String;
+  begin
+    Print(section);
+    Print(textToClick);
+    case section of 
+      1: sectionBypass := '_bbshome';
+      2: sectionBypass := '_bbsgetfav';
+      3: sectionBypass := '_bbsloc';
+      4: sectionBypass := '_bbsclan';
+      5: sectionBypass := '_bbsmemo';
+      6: sectionBypass := '_maillist_0_1_0_';
+      7: sectionBypass := '_friendlist_0_';
+      else begin
+        Print('unknown section ' + ToStr(section));
+        sectionBypass := '';
+      end;
+    end;
+    Print(sectionBypass);
+    if (sectionBypass <> '') 
+    then begin
+      Engine.BypassToServer(sectionBypass); 
+      Delay(vDelay);
+    end;
+    Result := B(textToClick, textToNotClick);
+  end;
+function CB(textToClick: String; textToNotClick: String = '$a^'): Boolean; Overload;
   begin
     if textToClick = '' then begin
       Result := true;

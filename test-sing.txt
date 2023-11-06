@@ -6,28 +6,32 @@ procedure OnAction(Action: TL2Action; P1, P2: pointer);
   begin
     if Action = laCast then begin
       Script.NewThread(
-          @OnSomeoneCasing, P1
+          @OnSomeoneCasting, P1
       );
     end;
   end;
-procedure OnSomeoneCasing(caster: TL2Char);
+procedure OnSomeoneCasting(caster: TL2Char);
+  var color: Integer;
   begin
     if (caster.Name = initiatorName)
-   and (caster.Cast.Name = 'Dance of Fire')
+   and (caster.Cast.Name = 'Dance of Fury')
    then begin
      Engine.FaceControl(1, false);
-     Engine.MoveTo(User.X+25, User.Y, User.Z);
-     Delay(333);
+//     Engine.MoveTo(User.X+25, User.Y, User.Z);
+//     Delay(333);
      if User.ClassId = 21 then begin
        if (User.MP > 90) then Delay(200);
-       Engine.UseSkill('Song of Wind');
 //       Engine.UseSkill('Song of Warding');
+       Engine.UseSkill('Song of Earth');
        Engine.UseSkill('Hunter''s Song');
+       Delay(150);
+       Engine.UseSkill('Song of Wind');
+
        if (User.Level >= 55) then begin
          if (pplname <> '') then
          begin
            Engine.LeaveParty;
-           Delay(105*1000);
+           Delay(110*1000);
            GetControl(pplname).InviteParty(User.Name);
          end;
        end;
@@ -37,10 +41,14 @@ procedure OnSomeoneCasing(caster: TL2Char);
 //       Engine.UseSkill('Dance of Concentration');
 //       Engine.UseSkill('Dance of the Mystic');
 //       if (User.MP > 50) then
-//       Engine.UseSkill('Dance of Fire');
+//       Engine.UseSkill('Dance of Fury');
+       Engine.UseSkill('Dance of Fire');
        Engine.UseSkill('Dance of the Warrior');
        
      
+     end
+     else if User.ClassId = 14 then begin
+       Engine.UseAction(1007);
      end;
      Engine.FaceControl(1, true);
    end
@@ -50,16 +58,15 @@ procedure OnSomeoneCasing(caster: TL2Char);
     and (caster.cast.name <> 'Blessed Spiritshot (D-grade)')
     and (caster.cast.name <> 'Blessed Spiritshot (C-grade)')
     and (caster.cast.name <> 'Item - Beast Soul Shot')
-   then PrintAsCols('['+caster.name+']', caster.cast.name + '->' + caster.Target.Name);
-  end;
-procedure PrintAsCols(a, b: string);
-  var
-    str: String;
-    i: Integer;
-  begin
-    str := a + '                          ' +
-    b;
-    Print(str);
+   then
+   begin
+     if (Caster.Clan =  User.Clan) or (Caster.IsMember)
+     then color := $228B22
+     else color := $4763FF;
+     Engine.Msg('Casting',
+     '['+caster.name+']       ' + caster.cast.name + '->' + caster.Target.Name
+     , color);
+   end;
   end;
 
 begin
