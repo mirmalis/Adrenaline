@@ -13,60 +13,53 @@ procedure OnAction(Action: TL2Action; P1, P2: pointer);
 procedure OnSomeoneCasting(caster: TL2Char);
   var color: Integer;
   begin
-    if (caster.Name = initiatorName)
-   and (caster.Cast.Name = 'Dance of Fury')
-   then begin
-     Engine.FaceControl(1, false);
-//     Engine.MoveTo(User.X+25, User.Y, User.Z);
-//     Delay(333);
-     if User.ClassId = 21 then begin
-       if (User.MP > 90) then Delay(200);
-//       Engine.UseSkill('Song of Warding');
-       Engine.UseSkill('Song of Earth');
-       Engine.UseSkill('Hunter''s Song');
-       Delay(150);
-       Engine.UseSkill('Song of Wind');
-
-       if (User.Level >= 55) then begin
-         if (pplname <> '') then
-         begin
-           Engine.LeaveParty;
-           Delay(110*1000);
-           GetControl(pplname).InviteParty(User.Name);
-         end;
-       end;
-     end
-     else if User.ClassId = 34 then begin
-       Delay(User.Cast.EndTime);
-//       Engine.UseSkill('Dance of Concentration');
-//       Engine.UseSkill('Dance of the Mystic');
-//       if (User.MP > 50) then
-//       Engine.UseSkill('Dance of Fury');
-       Engine.UseSkill('Dance of Fire');
-       Engine.UseSkill('Dance of the Warrior');
-       
-     
-     end
-     else if User.ClassId = 14 then begin
-       Engine.UseAction(1007);
-     end;
-     Engine.FaceControl(1, true);
-   end
-   else if
-    (caster.cast.name <> 'Soulshot (D-grade)')
-    and (caster.cast.name <> 'Blessed Spiritshot (No-grade)')
-    and (caster.cast.name <> 'Blessed Spiritshot (D-grade)')
-    and (caster.cast.name <> 'Blessed Spiritshot (C-grade)')
-    and (caster.cast.name <> 'Item - Beast Soul Shot')
-   then
-   begin
-     if (Caster.Clan =  User.Clan) or (Caster.IsMember)
-     then color := $228B22
-     else color := $4763FF;
-     Engine.Msg('Casting',
+    if (caster.Name = initiatorName) and ((caster.Cast.Name = 'Dance of Fury') or (caster.Cast.Name = 'Dance of Concentration'))
+    then Cast()
+    else if (caster.cast.name <> 'Soulshot (D-grade)')
+        and (caster.cast.name <> 'Blessed Spiritshot (No-grade)')
+        and (caster.cast.name <> 'Blessed Spiritshot (D-grade)')
+        and (caster.cast.name <> 'Blessed Spiritshot (C-grade)')
+        and (caster.cast.name <> 'Item - Beast Soul Shot')
+    then begin
+      if (Caster.Clan =  User.Clan) or (Caster.IsMember)
+      then color := $228B22
+      else color := $4763FF;
+      Engine.Msg('Casting',
      '['+caster.name+']       ' + caster.cast.name + '->' + caster.Target.Name
      , color);
-   end;
+    end
+    else begin end;
+    
+  end;
+procedure Cast();
+  begin
+    Engine.FaceControl(1, false);
+//    Engine.MoveTo(User.X+25, User.Y, User.Z);
+//    Delay(333);
+    Delay(User.Cast.EndTime);
+    if User.ClassId = 21 then
+    begin
+      if (User.MP > 90) then Delay(200);
+//        Engine.UseSkill('Song of Warding');
+//        Engine.UseSkill('Song of Earth');
+//        Engine.UseSkill('Hunter''s Song');
+      Delay(1000);
+      Engine.UseSkill('Song of Wind');
+    end
+    else if User.ClassId = 34 then begin
+//        Engine.UseSkill('Dance of Concentration');
+      Engine.UseSkill('Dance of the Mystic');
+//       Engine.UseSkill('Dance of Fury');
+//       Engine.UseSkill('Dance of Fire');
+//       Engine.UseSkill('Dance of the Warrior');
+    end
+    else if User.ClassId = 14 then begin
+      Engine.UseAction(1007);
+    end
+    else if User.Classid = 28 then begin
+      Engine.UseAction(1011);
+    end;
+    Engine.FaceControl(1, true);
   end;
 
 begin
