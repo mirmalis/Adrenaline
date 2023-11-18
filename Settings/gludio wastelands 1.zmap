@@ -23,5 +23,16 @@
 			<point x="-14407" y="177094"/>
 		</points>
 	</ExternalPoly>
-	<InternalPolies/>
+	<InternalPolies>
+		<poly>
+			<points>
+				<point x="-13930" y="174648"/>
+				<point x="-13802" y="174748"/>
+				<point x="-13806" y="174836"/>
+				<point x="-13914" y="174912"/>
+				<point x="-14134" y="174876"/>
+				<point x="-14110" y="174740"/>
+			</points>
+		</poly>
+	</InternalPolies>
 </zone>
