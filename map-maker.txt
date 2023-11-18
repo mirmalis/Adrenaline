@@ -1,4 +1,6 @@
 uses sdpThreads;
 begin
-  doMapMaker('gludin orcbaracks entrance');
+  dash.Start;
+  stealth.start;
+  doMapMaker('dion ct1 all');
 end.
