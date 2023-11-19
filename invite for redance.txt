@@ -1,0 +1,11 @@
+begin
+  while true do begin
+    Engine.InviteParty('llles'); Delay(1000);
+    Engine.InviteParty('lbd'); Delay(1000);
+    Engine.InviteParty('lsws'); Delay(1000);
+    
+
+    Delay(119000);
+
+  end;
+end.

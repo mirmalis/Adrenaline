@@ -1,0 +1,31 @@
+procedure MessageScanner();
+  begin
+    while delay(100) do begin
+      if (ChatMessage.Unread) and (ChatMessage.Time < 3333)
+      then
+      begin 
+        case ChatMessage.ChatType of
+          mtPrivate: HandlePrivateMessage(ChatMessage.Sender, ChatMessage.Text);
+        end;
+      end;
+    end;
+  end;
+procedure HandlePrivateMessage(sender: string; text: string);
+  begin
+    if (party.Chars.Count = 0) or (Party.Leader = User)
+    then // is party leader
+    begin
+      case text of
+        'inv': begin
+          Delay(1000);
+          Engine.InviteParty(sender);
+        end;
+      end;
+    end;
+  end;
+begin
+
+  Script.NewThread(@MessageScanner);
+  Delay(-1);
+
+end.
