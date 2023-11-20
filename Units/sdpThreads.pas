@@ -1,16 +1,6 @@
 unit sdpThreads;
 interface
   uses threadMapMaker, threadStopCasters;
-function doStopCasters(vSchemaNormal: String; vSchemaPassive: String; spellsToStop: String; vPrintMuch: Boolean = false): TStopCaster;
-procedure doFindChampions(range: Integer);
-procedure doAnnounceChampion;
-procedure doShadowItemON(vID: Integer);
-procedure doTarget(vID: Integer = 0);
-procedure doTargetChampions(range: Integer);
-procedure doPathRecord();
-procedure doAutoSweep();
-procedure doMapMaker(zoneName: string);
-
 type
   TBeDashing = class
     private
@@ -27,6 +17,20 @@ type
       property TimeLeft: Integer read FTimeLeft;
       property DoTargetSelf: Boolean read FDoTargetSelf write FDoTargetSelf;
     end;
+var
+  dash: TBeDashing;
+  stealth: TBeDashing;
+function doStopCasters(vSchemaNormal: String; vSchemaPassive: String; spellsToStop: String; vPrintMuch: Boolean = false): TStopCaster;
+procedure doFindChampions(range: Integer);
+procedure doAnnounceChampion;
+procedure doShadowItemON(vID: Integer);
+procedure doTarget(vID: Integer = 0);
+procedure doTargetChampions(range: Integer);
+procedure doPathRecord();
+procedure doAutoSweep();
+procedure doMapMaker(zoneName: string);
+
+
 procedure Help;
 implementation
 uses SysUtils, sdpSTRINGS, sdpItem, sdpSL, sdpMATH;
@@ -376,4 +380,6 @@ initialization
   spoil_sweepID := 42;
   spoil_pause_interface := True;
   spoil_above_hp := 70;
+  dash := TBeDashing.Create(4, 0);
+  stealth := TBeDashing.Create(411, 10*1000);
 end.

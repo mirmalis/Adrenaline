@@ -1,11 +1,11 @@
 begin
   while true do begin
-    Engine.InviteParty('llles'); Delay(1000);
-    Engine.InviteParty('lbd'); Delay(1000);
-    Engine.InviteParty('lsws'); Delay(1000);
-    
-
-    Delay(119000);
-
+    Engine.InviteParty('lllee'); Delay(600);
+    Engine.InviteParty('lllse'); Delay(600);
+    Engine.InviteParty('lllse2'); Delay(600);
+    Engine.InviteParty('llles'); Delay(600);
+    Engine.InviteParty('lbd'); Delay(600);
+    Engine.InviteParty('lsws'); Delay(600);
+    Delay(117000);
   end;
 end.
