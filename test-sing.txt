@@ -2,6 +2,7 @@ uses sdpGPS, sdpBYPASS, sdpUtils, sdpItem, sdpSTRINGS, sysUtils;
 const
 pplname: string = 'lllwlk';
 initiatorName: string = 'lbd';
+
 procedure OnAction(Action: TL2Action; P1, P2: pointer);
   begin
     if Action = laCast then begin
@@ -13,7 +14,7 @@ procedure OnAction(Action: TL2Action; P1, P2: pointer);
 procedure OnSomeoneCasting(caster: TL2Char);
   var color: Integer;
   begin
-    if (caster.Name = initiatorName) and ((caster.Cast.Name = 'Dance of Fury') or (caster.Cast.Name = 'Dance of Concentration'))
+    if (caster.Name = initiatorName) and ((caster.Cast.Name = 'Dance of Fury') or (caster.Cast.Name = 'Dance of the Mystic'))
     then Cast()
     else if (caster.cast.name <> 'Soulshot (D-grade)')
         and (caster.cast.name <> 'Blessed Spiritshot (No-grade)')
@@ -40,15 +41,14 @@ procedure Cast();
     if User.ClassId = 21 then
     begin
       if (User.MP > 90) then Delay(200);
-//        Engine.UseSkill('Song of Warding');
+        Engine.UseSkill('Song of Warding');
 //        Engine.UseSkill('Song of Earth');
 //        Engine.UseSkill('Hunter''s Song');
-      Delay(1000);
       Engine.UseSkill('Song of Wind');
     end
     else if User.ClassId = 34 then begin
-//        Engine.UseSkill('Dance of Concentration');
-      Engine.UseSkill('Dance of the Mystic');
+        Engine.UseSkill('Dance of Concentration');
+//      Engine.UseSkill('Dance of the Mystic');
 //       Engine.UseSkill('Dance of Fury');
 //       Engine.UseSkill('Dance of Fire');
 //       Engine.UseSkill('Dance of the Warrior');
